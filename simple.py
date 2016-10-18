@@ -11,6 +11,9 @@ x = tf.placeholder(tf.float32, [None, 784])
 W = tf.Variable(tf.zeros([784, 10]))
 b = tf.Variable(tf.zeros([10]))
 
+# used for saving the trained network later
+saver = tf.train.Saver()
+
 # output is the softmax of the neuron activations
 y = tf.nn.softmax(tf.matmul(x, W) + b)
 
@@ -28,22 +31,21 @@ train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(cross_ent
 init = tf.initialize_all_variables()
 
 # initialise the session in which we will train the model
-sess = tf.Session()
-sess.run(init)
+session = tf.Session()
+session.run(init)
 
 # train the model
 epochs = 1000
 for i in range(epochs):
     batch_xs, batch_ys = mnist.train.next_batch(100)
-    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+    session.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
 # evaluate the model
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-print(sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
+# save model
+path = saver.save(session, "/tmp/fully_connected_model.ckpt")
+print("Model saved at: %s" % path)
 
-
-
-
-
+print(session.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
