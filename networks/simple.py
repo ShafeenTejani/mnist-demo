@@ -4,18 +4,15 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 import tensorflow as tf
 
+import variables
+
 # a placeholder for an any x 784 dimensional vector
 x = tf.placeholder(tf.float32, [None, 784])
 
-# variables that can be modified by tensorflow, initialise to zero
-W = tf.Variable(tf.zeros([784, 10]))
-b = tf.Variable(tf.zeros([10]))
+y, [W, b] = variables.fully_connected(x)
 
 # used for saving the trained network later
 saver = tf.train.Saver()
-
-# output is the softmax of the neuron activations
-y = tf.nn.softmax(tf.matmul(x, W) + b)
 
 # expected labels
 y_ = tf.placeholder(tf.float32, [None, 10])
