@@ -34,20 +34,20 @@ def convolutional_network(input):
 # webapp
 from flask import Flask, jsonify, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./web/build", static_url_path='')
 
 @app.route('/')
 def index():
-    return jsonify("Hello")
+    return app.send_static_file('index.html')
 
 @app.route('/api/mnist/fully_connected', methods=['POST'])
 def fully_connected():
     input = np.array([request.json], dtype=np.float32)
     output = fully_connected_network(input)
-    return jsonify(results=output)
+    return jsonify(results=dict(enumerate(output)))
 
 @app.route('/api/mnist/convolutional', methods=['POST'])
 def convolutional():
     input = np.array([request.json], dtype=np.float32)
     output = convolutional_network(input)
-    return jsonify(results=output)
+    return jsonify(results=dict(enumerate(output)))
