@@ -1,5 +1,6 @@
 import "./assets/stylesheets/style.less";
 import "./assets/stylesheets/layout.less";
+import "./assets/stylesheets/pure-min.css";
 import App from './App';
 import reducers from './reducers';
 
