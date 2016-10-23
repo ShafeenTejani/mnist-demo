@@ -63,7 +63,7 @@ class InputCanvasComponent extends React.Component {
     this.ctx.lineJoin = 'round';
     this.ctx.lineCap = 'round';
     this.ctx.beginPath();
-    this.ctx.lineWidth = 8;
+    this.ctx.lineWidth = 16;
     this.ctx.moveTo(start.x, start.y);
     this.ctx.lineTo(end.x, end.y);
     this.ctx.closePath();
