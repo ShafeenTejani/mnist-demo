@@ -88,6 +88,7 @@ class InputCanvasComponent extends React.Component {
 
   render() {
     return <div className="input-canvas-container">
+            <div><i className="fa fa-pencil" aria-hidden="true"></i> Draw a digit</div>
             <canvas className="input-canvas"
                     ref="inputCanvas"
                     width={224} height={224}
