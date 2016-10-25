@@ -40,6 +40,13 @@ app = Flask(__name__, static_folder="./web/build", static_url_path='')
 def index():
     return app.send_static_file('index.html')
 
+@app.route('/api/mnist/evaluate', methods=['POST'])
+def evaluate():
+    input = np.array([request.json], dtype=np.float32)
+    outputFC = fully_connected_network(input)
+    outputConv = convolutional_network(input)
+    return jsonify(fully_connected=dict(enumerate(outputFC)),convolutional=dict(enumerate(outputConv)))
+
 @app.route('/api/mnist/fully_connected', methods=['POST'])
 def fully_connected():
     input = np.array([request.json], dtype=np.float32)

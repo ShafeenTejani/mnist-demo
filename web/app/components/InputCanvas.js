@@ -1,8 +1,7 @@
 import React from "react";
 import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
-import { inputUpdated } from '../actions/InputActions';
-import { inputCleared } from '../actions/InputActions';
+import { inputUpdated, inputCleared, inputReady } from '../actions/InputActions';
 
 
 function toPixelIntensities(imageData) {
@@ -55,7 +54,10 @@ class InputCanvasComponent extends React.Component {
   }
 
   onMouseUp(e) {
-    this.setState({drawing: false});
+    if (this.state.drawing) {
+      this.setState({drawing: false});
+      this.props.onInputReady();
+    }
   }
 
   drawLine(start, end) {

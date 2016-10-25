@@ -13,7 +13,7 @@ const initialState = {
 const fullyConnected = (state = {}, action) => {
   switch (action.type) {
     case FULLY_CONNECTED_EVALUATED:
-      return Object.assign({}, action.payload.results);
+      return Object.assign({}, action.payload);
     case INPUT_CLEARED:
       return {};
     default:
@@ -24,7 +24,7 @@ const fullyConnected = (state = {}, action) => {
 const convolutional = (state = {}, action) => {
   switch (action.type) {
     case CONVOLUTIONAL_EVALUATED:
-      return Object.assign({}, action.payload.results);
+      return Object.assign({}, action.payload);
     case INPUT_CLEARED:
         return {};
     default:

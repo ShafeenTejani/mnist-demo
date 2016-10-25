@@ -4,7 +4,23 @@ import fetch from 'whatwg-fetch';
 export const FULLY_CONNECTED_EVALUATED = 'FULLY_CONNECTED_EVALUATED';
 export const CONVOLUTIONAL_EVALUATED = 'CONVOLUTIONAL_EVALUATED';
 
-//const input = Array.apply(null, Array(784)).map(Number.prototype.valueOf,0);
+export function evaluate(input) {
+  return (dispatch) => {
+    ajax({
+      url: '/api/mnist/evaluate',
+      method: 'POST',
+      body: JSON.stringify(input),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }}, function(code, responseText) {
+        const response = JSON.parse(responseText);
+        dispatch({ type: FULLY_CONNECTED_EVALUATED, payload: response.fully_connected });
+        dispatch({ type: CONVOLUTIONAL_EVALUATED, payload: response.convolutional });
+      }
+    );
+  }
+}
 
 export function evaluateFullyConnected(input) {
   return (dispatch) => {
@@ -16,7 +32,7 @@ export function evaluateFullyConnected(input) {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }}, function(code, responseText) {
-        dispatch({ type: FULLY_CONNECTED_EVALUATED, payload: JSON.parse(responseText)})
+        dispatch({ type: FULLY_CONNECTED_EVALUATED, payload: JSON.parse(responseText).results})
       }
     );
   }
@@ -33,7 +49,7 @@ export function evaluateConvolutional(input) {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }}, function(code, responseText) {
-        dispatch({ type: CONVOLUTIONAL_EVALUATED, payload: JSON.parse(responseText)})
+        dispatch({ type: CONVOLUTIONAL_EVALUATED, payload: JSON.parse(responseText).results})
       }
     );
   }

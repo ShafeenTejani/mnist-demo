@@ -21,7 +21,7 @@ const RescaledImage = React.createClass({
 
   drawImage: function() {
     for (let i=0; i < this.props.imageData.length; i++) {
-      this.ctx.fillStyle = "rgba(0,0,0,"+(this.props.imageData[i]/255)+")";
+      this.ctx.fillStyle = "rgba(0,0,0,"+(this.props.imageData[i])+")";
       let x = i % this.props.size;
       let y = i / this.props.size;
       this.ctx.fillRect( x, y, 1, 1 );

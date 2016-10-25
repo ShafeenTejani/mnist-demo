@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { evaluateConvolutional, evaluateFullyConnected } from '../actions/EvaluateActions';
+import { evaluate } from '../actions/EvaluateActions';
 
 export const EvaluateResults = React.createClass({
 
@@ -11,9 +11,8 @@ export const EvaluateResults = React.createClass({
 
   evaluate: function(){
     if (this.props.rescaled_input) {
-        const input = this.props.rescaled_input.map(x => x / 255.0);
-        this.props.evaluateConvolutional(input);
-        this.props.evaluateFullyConnected(input);
+        const input = this.props.rescaled_input;
+        this.props.evaluate(input);
     }
   },
 
@@ -29,8 +28,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => { return {
-    evaluateConvolutional: function(input) { dispatch(evaluateConvolutional(input)); },
-    evaluateFullyConnected: function(input) { dispatch(evaluateFullyConnected(input)); }
+    evaluate: function(input) { dispatch(evalutate(input)); }
   };
 };
 

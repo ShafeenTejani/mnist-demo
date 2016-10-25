@@ -21,7 +21,7 @@ function rescaleImagePixels(pixelIntensities, toSize) {
         pixelSum += pixelIntensities[x + y*fromSize]
       }
     }
-    rescaledPixelIntensities[i] = pixelSum / (scale**2);
+    rescaledPixelIntensities[i] = pixelSum / (255.0 * scale**2);
   }
   return rescaledPixelIntensities;
 }
