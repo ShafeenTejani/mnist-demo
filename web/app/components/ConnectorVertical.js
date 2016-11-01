@@ -1,6 +1,6 @@
 import React from "react";
 
-const ConnectorHorizontal = (props) => {
+const ConnectorVertical = (props) => {
   const className = props.className || "";
   return <div className={className}
        style={{"height": props.height}}>
@@ -9,4 +9,4 @@ const ConnectorHorizontal = (props) => {
 };
 
 
-export default ConnectorHorizontal;
+export default ConnectorVertical;

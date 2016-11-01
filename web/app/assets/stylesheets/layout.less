@@ -12,12 +12,28 @@
 
 .main-content {
 	flex: 1;
+	padding: 2em;
+	min-width: 780px;
 }
 
 .sidebar {
-	flex: 0 0 250px;
+	flex: 0 0 200px;
 	order: -1;
 	background-color: #FAFAFA;
+	padding: 1em;
+}
+
+.signature {
+	text-align: center;
+	.icons {
+		margin-top: 0.5em;
+		a:nth-child(2) {
+			margin-left: 0.5em;
+		}
+		.fa-twitter {
+			color: #68ADFD;
+		}
+	}
 }
 
 .clear-canvas {
@@ -30,7 +46,12 @@
 }
 
 .rescaled-column {
-	margin-top: 109px;
+	margin-top: 83px;
+}
+
+.rescaled-title {
+	margin-bottom: 0.5em;
+	margin-left: -50%;
 }
 
 .input-to-rescaled-connector {
@@ -45,4 +66,25 @@
 .input-output-connector {
 	margin-left: 12px;
 	margin-top: -4px;
+}
+
+.classification-results {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.classification-results:nth-child(2) {
+	margin-left: 127px;
+}
+
+.output-connector-end {
+	display: inline-block;
+}
+
+.output-connector-end:nth-child(1) {
+	margin-left: 112px;
+}
+
+.output-connector-end:nth-child(2) {
+	margin-left: 412px;
 }

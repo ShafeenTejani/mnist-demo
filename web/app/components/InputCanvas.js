@@ -88,7 +88,10 @@ class InputCanvasComponent extends React.Component {
 
   render() {
     return <div className="input-canvas-container">
-            <div><i className="fa fa-pencil" aria-hidden="true"></i> Draw a digit</div>
+            <div style={{marginBottom: "10px"}}>
+              <i className="fa fa-pencil" aria-hidden="true"></i>
+              <span style={{marginLeft: "0.5em"}}>Draw a digit</span>
+            </div>
             <canvas className="input-canvas"
                     ref="inputCanvas"
                     width={224} height={224}
@@ -97,7 +100,9 @@ class InputCanvasComponent extends React.Component {
                     onMouseOut={this.onMouseUp}
                     onMouseUp={this.onMouseUp}
                     />
-              <span className="clear-canvas" onClick={this.clear}>reset</span>
+              <span className="clear-canvas" onClick={this.clear}>
+                <span style={{marginLeft: "0.5em"}}>reset</span>
+              </span>
           </div>
   }
 };

@@ -1,11 +1,14 @@
 import React from "react";
+import Signature from "./Signature";
 
 const Sidebar = (props) => (
   <aside className="sidebar">
-    <h1>Heading</h1>
-    <p>Some text</p>
+    <div className="header">
+      Single Digit Classification with Artificial Neural Networks
+    </div>
+    <p></p>
+    <Signature/>
   </aside>
 );
 
-
-export default Sidebar
+export default Sidebar;

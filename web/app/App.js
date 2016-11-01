@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Sidebar from './components/Sidebar';
 import ConnectorHorizontal from './components/ConnectorHorizontal';
 import ConnectorVertical from './components/ConnectorVertical';
+import ConnectorEnd from './components/ConnectorEnd';
 import Results from './components/Results';
 import InputCanvas from './components/InputCanvas';
 import RescaledImage from './components/RescaledImage';
@@ -20,13 +21,26 @@ const AppComponent = React.createClass({
                     <InputCanvas onInputReady={() => this.props.evaluate(this.props.rescaled_input)}/>
                     <ConnectorHorizontal width={300} className="input-to-rescaled-connector"/>
                     <div className="rescaled-column">
+                      <div className="rescaled-title">
+                        Neural Network Input (28 x 28 pixels)
+                      </div>
                       <RescaledImage imageData={this.props.rescaled_input} size={28}/>
                       <ConnectorVertical height={250} className="input-output-connector"/>
                     </div>
                   </div>
                   <ConnectorHorizontal width={427} className="output-connector"/>
-                  <Results results={this.props.convolutional}/>
-                  <Results results={this.props.fully_connected}/>
+                  <div>
+                    <ConnectorEnd className="output-connector-end">
+                      <ConnectorVertical height={15}/>
+                    </ConnectorEnd>
+                    <ConnectorEnd className="output-connector-end">
+                      <ConnectorVertical height={15}/>
+                    </ConnectorEnd>
+                  </div>
+                  <div className="output-row">
+                    <Results title="Fully Connected Neural Network" results={this.props.fully_connected}/>
+                    <Results title="Convolutional Neural Network" results={this.props.convolutional}/>
+                  </div>
                 </main>
               </div>
             </div>)

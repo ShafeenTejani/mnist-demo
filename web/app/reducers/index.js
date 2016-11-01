@@ -4,29 +4,29 @@ import { FULLY_CONNECTED_EVALUATED, CONVOLUTIONAL_EVALUATED } from '../actions/E
 import { INPUT_UPDATED, INPUT_CLEARED, RESCALED_INPUT_UPDATED } from '../actions/InputActions';
 
 const initialState = {
-  fully_connected: {},
-  convolutional: {},
+  fully_connected: null,
+  convolutional: null,
   input_image: { data: [], size: 0 },
   rescaled_input: null
 };
 
-const fullyConnected = (state = {}, action) => {
+const fullyConnected = (state = null, action) => {
   switch (action.type) {
     case FULLY_CONNECTED_EVALUATED:
       return Object.assign({}, action.payload);
     case INPUT_CLEARED:
-      return {};
+      return null;
     default:
       return state;
   }
 };
 
-const convolutional = (state = {}, action) => {
+const convolutional = (state = null, action) => {
   switch (action.type) {
     case CONVOLUTIONAL_EVALUATED:
       return Object.assign({}, action.payload);
     case INPUT_CLEARED:
-        return {};
+        return null;
     default:
       return state;
   }

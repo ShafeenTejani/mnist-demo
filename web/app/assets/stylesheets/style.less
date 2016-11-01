@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900);
 
 
 @body-indigo: #0D3D56;
@@ -9,6 +9,22 @@ body {
 	font-family: 'PT Sans', sans-serif;
 	margin: 0px;
 	color: black;
+}
+
+.header {
+	font-weight: bold;
+}
+
+.signature {
+	.icons {
+		font-size: 1.1em;
+		a:visited {
+			color: inherit;
+		}
+		.fa-twitter {
+			color: #68ADFD;
+		}
+	}
 }
 
 .sidebar {
@@ -46,33 +62,11 @@ body {
 	background-color: #979797;
 	width: 3px;
 }
-.chart {
-	display:table;
-  table-layout: fixed;
 
-  width:40%;
-  height:100px;
-  background-size: 100% 50px;
-  background-position: left top;
+.connector-end {
+	background-color: #979797;
+}
 
-	li {
-    position:relative;
-    display:table-cell;
-    vertical-align:bottom;
-    height:100px;
-  }
-
-  div {
-    margin:0 0.2em;
-    background: rgba(209,236,250, .75);
-
-    &:before{
-      position:absolute;
-      left:0;right:0;top:100%;
-      padding:5px 0.2em 0;
-  		display:block;
-      text-align:center;
-      content:attr(title);
-    }
-  }
+.classification-results-chart .result {
+	background-color: #4A90E2;
 }
