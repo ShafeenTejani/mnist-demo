@@ -97,7 +97,7 @@ class InputCanvasComponent extends React.Component {
                     onMouseOut={this.onMouseUp}
                     onMouseUp={this.onMouseUp}
                     />
-              <button className="clear-canvas pure-button" onClick={this.clear}>Clear</button>
+              <span className="clear-canvas" onClick={this.clear}>reset</span>
           </div>
   }
 };
