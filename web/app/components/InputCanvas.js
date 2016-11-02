@@ -1,8 +1,5 @@
 import React from "react";
 import { findDOMNode } from 'react-dom';
-import { connect } from 'react-redux';
-import { inputUpdated, inputCleared, inputReady } from '../actions/InputActions';
-
 
 function toPixelIntensities(imageData) {
   const pixelIntensities = Array(imageData.length / 4); //RGBA
@@ -13,7 +10,7 @@ function toPixelIntensities(imageData) {
   return pixelIntensities
 }
 
-class InputCanvasComponent extends React.Component {
+class InputCanvas extends React.Component {
 
   componentDidMount() {
     this.canvas = findDOMNode(this.refs.inputCanvas);
@@ -48,7 +45,7 @@ class InputCanvasComponent extends React.Component {
     this.drawLine(previousPosition, currentPosition);
 
     const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height).data;
-    this.props.inputUpdated(toPixelIntensities(imageData), 224);
+    this.props.onInputUpdated(toPixelIntensities(imageData), 224);
 
     this.setState({currentPosition: currentPosition});
   }
@@ -83,7 +80,7 @@ class InputCanvasComponent extends React.Component {
 
   clear() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.props.inputCleared();
+    this.props.onInputCleared();
   }
 
   render() {
@@ -106,22 +103,5 @@ class InputCanvasComponent extends React.Component {
           </div>
   }
 };
-
-const mapStateToProps = (state) => {
-  return { input_image: state.input_image };
-};
-
-const mapDispatchToProps = (dispatch) => { return {
-    inputUpdated: function(imageData, size) { dispatch(inputUpdated(imageData, size)); },
-    inputCleared: function() { dispatch(inputCleared()); }
-  };
-};
-
-
-const InputCanvas = connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(InputCanvasComponent);
-
 
 export default InputCanvas;
