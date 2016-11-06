@@ -40,6 +40,7 @@ const DigitClassificationDemoComponent = React.createClass({
         <Results title="Convolutional Neural Network" results={this.props.convolutional}/>
         <Results title="Fully Connected Neural Network" results={this.props.fully_connected}/>
       </div>
+      <div className="github-link"><a href="https://github.com/ShafeenTejani/mnist-demo" target="_blank">See the code on GitHub</a></div>
     </main>;
   }
 });
