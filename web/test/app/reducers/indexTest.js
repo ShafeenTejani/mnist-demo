@@ -29,8 +29,8 @@ describe("ReducersTest", function() {
 
 		const state = reducer(initialState, action);
 
-		expect(state).to.eql({
-			fully_connected: {
+		expect(state.fully_connected).to.eql({
+			results: {
 				0: 0.1,
 				1: 0.1,
 				2: 0.3,

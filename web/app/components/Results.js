@@ -51,13 +51,13 @@ export const Results = React.createClass({
 
     const classificationValue = maxClassification(this.props.results);
 
-    return <div className="classification-results" style={{width: 306}}>
+    return <div className="classification-results">
       <div style={{marginBottom: "1em"}}>
         <i className="fa fa-share-alt" aria-hidden="true"></i>
         <span style={{marginLeft: "0.5em"}}>{this.props.title}</span>
       </div>
       <div className="classification-results-chart"
-           style={{display: "inline-block", width: 200}}>{
+           style={{display: "inline-block"}}>{
         [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(index => {
             const weight = parseInt(parseFloat(this.props.results[index.toString()]) * 100) || 0;
             return <div className="result-row" key={index}>

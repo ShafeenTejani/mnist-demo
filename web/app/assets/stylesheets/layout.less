@@ -71,6 +71,11 @@
 .classification-results {
 	display: inline-block;
 	margin-top: 10px;
+	width: 306px;
+}
+
+.classification-results-chart {
+	width: 200px;
 }
 
 .classification-results:nth-child(2) {
@@ -87,4 +92,67 @@
 
 .output-connector-end:nth-child(2) {
 	margin-left: 412px;
+}
+
+/* Portrait */
+@media only screen
+  and (max-device-width: 480px){
+		.input-row {
+			display: block;
+		}
+
+		.input-to-rescaled-connector {
+			display: none;
+		}
+
+		.input-output-connector {
+			display: none;
+		}
+
+		.connector-vertical {
+			display: none;
+		}
+
+		.connector-horizontal {
+			display: none;
+		}
+
+		.connector-end {
+			display: none;
+		}
+
+		.rescaled-title {
+			margin-bottom: 1em;
+			margin-left: 0;
+		}
+
+		.rescaled-column {
+			margin-top: 2em;
+			margin-left: 0px;
+		}
+
+		.rescaled-canvas {
+			margin-left: 100px;
+		}
+
+		.classification-results {
+			width: 250px;
+			display: block;
+		}
+
+		.classification-results-chart {
+			width: 140px;
+		}
+
+		.classification-results:nth-child(2) {
+			margin-top: 1em;
+			margin-left: 0px;
+		}
+
+		.sidebar {
+			order: 1;
+		}
+		.main-content {
+			min-width: 260px;
+		}
 }
