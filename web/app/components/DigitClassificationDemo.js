@@ -37,8 +37,8 @@ const DigitClassificationDemoComponent = React.createClass({
         </ConnectorEnd>
       </div>
       <div className="output-row">
-        <Results title="Fully Connected Neural Network" results={this.props.fully_connected}/>
         <Results title="Convolutional Neural Network" results={this.props.convolutional}/>
+        <Results title="Fully Connected Neural Network" results={this.props.fully_connected}/>
       </div>
     </main>;
   }
