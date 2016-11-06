@@ -2,4 +2,4 @@ Flask==0.11.1
 jsonschema==2.5.1
 numpy==1.11.2
 gunicorn==19.3.0
-https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0-py2-none-any.whl
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.9.0-cp27-none-linux_x86_64.whl
