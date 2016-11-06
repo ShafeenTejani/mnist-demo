@@ -39,9 +39,10 @@ module.exports = {
   ],
   // https://www.npmjs.com/package/html-webpack-plugin - generate our html file from a template - makes it easier to include custom stuff
   indexPagePlugin: new HtmlWebpackPlugin({
-                          title: 'MNIST',
+                          title: 'MNIST Demo',
                           inject: true,
                           filename: 'index.html',
+                          favicon: './web/app/assets/images/favicon-share-alt.ico',
                           template: './web/app/index_template.html'
                         })
 }
