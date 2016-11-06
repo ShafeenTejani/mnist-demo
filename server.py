@@ -34,7 +34,7 @@ def convolutional_network(input):
 # webapp
 from flask import Flask, jsonify, render_template, request
 
-app = Flask(__name__, static_folder="./web/build", static_url_path='')
+app = Flask(__name__, static_folder="./build", static_url_path='')
 
 @app.route('/')
 def index():
