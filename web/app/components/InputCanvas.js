@@ -15,6 +15,27 @@ class InputCanvas extends React.Component {
   componentDidMount() {
     this.canvas = findDOMNode(this.refs.inputCanvas);
     this.ctx = this.canvas.getContext('2d');
+
+    this.canvas.addEventListener("touchstart", this.onMouseDown, false);
+    this.canvas.addEventListener("touchend", this.onMouseUp, false);
+    this.canvas.addEventListener("touchmove", this.onMouseMove, false);
+
+    // Prevent scrolling when touching the canvas
+    document.body.addEventListener("touchstart", function (e) {
+      if (e.target.id == "input-canvas") {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchend", function (e) {
+      if (e.target.id == "input-canvas") {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchmove", function (e) {
+      if (e.target.id == "input-canvas") {
+        e.preventDefault();
+      }
+    }, false);
   }
 
   constructor(props) {
@@ -71,10 +92,18 @@ class InputCanvas extends React.Component {
   }
 
   getCursorPosition(e) {
+    let xPos, yPos;
+    if (e.touches !== undefined) {
+      xPos = e.touches[0].clientX;
+      yPos = e.touches[0].clientY
+    } else {
+      xPos = e.clientX;
+      yPos = e.clientY;
+    }
     const {top, left} = this.canvas.getBoundingClientRect();
     return {
-      x: e.clientX - left,
-      y: e.clientY - top
+      x: xPos - left,
+      y: yPos - top
     };
   }
 
@@ -89,7 +118,8 @@ class InputCanvas extends React.Component {
               <i className="fa fa-pencil" aria-hidden="true"></i>
               <span style={{marginLeft: "0.5em"}}>Draw a digit</span>
             </div>
-            <canvas className="input-canvas"
+            <canvas id="input-canvas"
+                    className="input-canvas"
                     ref="inputCanvas"
                     width={224} height={224}
                     onMouseDown={this.onMouseDown}
