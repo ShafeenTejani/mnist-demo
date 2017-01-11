@@ -93,11 +93,13 @@ The trained networks will be saved to the `/tmp` directory
 
 ## Deployment to Heroku
 
+To deploy the application to Heroku, run the following:
+
 ```bash
-$ heroku apps:create <NAME>
-$ heroku buildpacks:add heroku/nodejs
-$ heroku buildpacks:add heroku/python
-$ git push heroku master
+heroku apps:create <NAME>
+heroku buildpacks:add heroku/nodejs
+heroku buildpacks:add heroku/python
+git push heroku master
 ```
 
 
