@@ -6,7 +6,10 @@ A web application which demonstrates the ability of both fully connected and con
 
 ## Demonstration
 
+Where is it?
+What does it show?
 
+Show me a gif..
 
 
 ## Code
@@ -25,6 +28,42 @@ Both the fully connnected and convolutional neural networks have been trained us
 The training data used are the 60,000 training images from the MNIST database of handwritten digits.
 
 ## Getting Started
+
+### Requirements
+
+* Python 2.7
+* pip
+
+### Install Dependencies
+
+Install server dependencies:
+* `pip install -r requirements.txt` (Linux)
+* `pip install -r requirements-mac.txt` (Mac)
+
+Install web dependencies:
+* `npm install`
+
+### Run Application
+
+To build and run the app locally run:
+
+* `npm run build && npm run gunicorn`
+
+The app will running at `localhost:8000`
+
+### Webpack front-end development server
+
+* `npm run gunicorn`
+* `npm run dev`
+
+The front-end development server will be running at `localhost:8080`
+
+### Neural Networks
+
+The pre-trained neural networks are saved in the models directory.
+
+To re-train the networks run:
+
 
 
 
