@@ -1,3 +1,4 @@
+//Copyright (c) 2016-2017 Shafeen Tejani. Released under GPLv3.
 import "./assets/stylesheets/style.less";
 import "./assets/stylesheets/layout.less";
 import App from './App';

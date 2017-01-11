@@ -1,3 +1,4 @@
+//Copyright (c) 2016-2017 Shafeen Tejani. Released under GPLv3.
 export const INPUT_UPDATED = 'INPUT_UPDATED';
 export const INPUT_CLEARED = 'INPUT_CLEARED';
 export const RESCALED_INPUT_UPDATED = 'RESCALED_INPUT_UPDATED';

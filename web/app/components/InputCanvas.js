@@ -1,3 +1,4 @@
+//Copyright (c) 2016-2017 Shafeen Tejani. Released under GPLv3.
 import React from "react";
 import { findDOMNode } from 'react-dom';
 
