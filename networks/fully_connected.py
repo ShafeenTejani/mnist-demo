@@ -25,7 +25,7 @@ learning_rate = 0.5
 train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(cross_entropy)
 
 # actually initialise the variables
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 
 # initialise the session in which we will train the model
 session = tf.Session()

@@ -25,7 +25,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 saver = tf.train.Saver()
 
-session.run(tf.initialize_all_variables())
+session.run(tf.global_variables_initializer())
 
 for i in range(20000):
     batch = mnist.train.next_batch(50)
