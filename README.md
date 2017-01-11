@@ -93,7 +93,7 @@ The trained networks will be saved to the `/tmp` directory
 
 ## Deployment to Heroku
 
-To deploy the application to Heroku, run the following:
+To [deploy the application to Heroku](https://devcenter.heroku.com/articles/git), run the following:
 
 ```bash
 heroku apps:create <NAME>
