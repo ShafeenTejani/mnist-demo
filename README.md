@@ -49,14 +49,16 @@ To build and run the app locally run:
 
 * `npm run build && npm run gunicorn`
 
-The app will running at `localhost:8000`
+The app will be running at `localhost:8000`
 
 ### Webpack front-end development server
+
+To run the app with the front-end development server run:
 
 * `npm run gunicorn`
 * `npm run dev`
 
-The front-end development server will be running at `localhost:8080`
+The development server will be running at `localhost:8080` and proxying requests to `localhost:8000`
 
 ### Neural Networks
 
@@ -64,11 +66,13 @@ The pre-trained neural networks are saved in the models directory.
 
 To re-train the networks run:
 
+* `python networks/fully_connected.py`
+* `python networks/convolutional.py`
 
+The trained networks will be saved to the `/tmp` directory
 
 
 ## Deployment
-
 
 
 
