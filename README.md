@@ -16,23 +16,23 @@ Show me a gif..
 
 ### Web
 
-The front-end is a single page web application developed with the React.js and and Redux frameworks.
+The front-end is a single page web application developed with the [React](https://facebook.github.io/react/) and and [Redux.js](http://redux.js.org/docs/introduction/) frameworks.
 
 ### Server
 
-The server is a python flask server which use's Google's TensorFlow library to evaluation pre-trained neural networks for handwriting recogntion.
+The server is a python [Flask](http://flask.pocoo.org/) server which uses Google's [TensorFlow](https://www.tensorflow.org/) library to evaluation pre-trained neural networks for handwriting recogntion.
 
 ### Neural Networks
 
-Both the fully connnected and convolutional neural networks have been trained using TensorFlow and following the tutorials MNIST for ML beginners and Deep MNIST for Experts.
-The training data used are the 60,000 training images from the MNIST database of handwritten digits.
+Both the fully connnected and convolutional neural networks have been trained using [TensorFlow](https://www.tensorflow.org/) and following the tutorials [MNIST for ML beginners](https://www.tensorflow.org/tutorials/mnist/beginners/) and [Deep MNIST for Experts](https://www.tensorflow.org/tutorials/mnist/pros/).
+The training data used are the 60,000 training images from the [MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/).
 
 ## Getting Started
 
 ### Requirements
 
-* Python 2.7
-* pip
+* [Python 2.7](https://www.python.org/download/releases/2.7/)
+* [pip](https://pip.readthedocs.io/en/stable/)
 
 ### Install Dependencies
 
@@ -77,12 +77,16 @@ The development server will be running at `localhost:8080` and proxying requests
 
 ### Neural Networks
 
-The pre-trained neural networks are saved in the models directory.
+The pre-trained neural networks are saved in the [models](models) directory.
 
 To re-train the networks run:
 
-* `python networks/fully_connected.py`
-* `python networks/convolutional.py`
+```bash
+python networks/fully_connected.py
+```
+```bash
+python networks/convolutional.py
+```
 
 The trained networks will be saved to the `/tmp` directory
 
