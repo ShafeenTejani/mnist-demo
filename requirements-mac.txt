@@ -1,0 +1,5 @@
+Flask==0.11.1
+jsonschema==2.5.1
+numpy==1.11.2
+gunicorn==19.3.0
+https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.1-py2-none-any.whl
