@@ -102,5 +102,7 @@ heroku buildpacks:add heroku/python
 git push heroku master
 ```
 
+## License
 
+Released under GPLv3, see [LICENSE.txt](LICENSE.txt)
 
