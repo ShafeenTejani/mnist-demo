@@ -2,14 +2,19 @@
 
 An interactive demonstration of single digit classification using deep artificial neural networks.
 
-A web application which demonstrates the ability of both fully connected and convolutional neural networks to classify handwritten digits.
+Two neural networks have been trained on the MNIST data set using the Google TensorFlow library.
+
+* A simple, fully connected 3 layer neural network, trained to a test accuracy of 91.8%.
+* And a convolutional neural network, with 2 convolutional layers and a fully connected layer, trained to a test accuracy of 99.2%.
+
+This web application demonstrates the ability of both networks to classify handwritten digits.
 
 ## Demonstration
 
-Where is it?
-What does it show?
+This application is available at [mnist-demo.herokuapp.com](mnist-demo.herokuapp.com)
 
-Show me a gif..
+Once you draw an image it is scaled to the appropriate 28x28 pixel resolution evaluated with both networks:
+
 
 
 ## Code
