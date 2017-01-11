@@ -37,7 +37,12 @@ The training data used are the 60,000 training images from the MNIST database of
 ### Install Dependencies
 
 Install server dependencies:
-* `pip install -r requirements.txt` (Linux)
+```bash
+pip install -r requirements.txt
+``` 
+
+(Linux)
+
 * `pip install -r requirements-mac.txt` (Mac)
 
 Install web dependencies:
