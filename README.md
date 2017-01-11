@@ -5,7 +5,7 @@ An interactive demonstration of single digit classification using deep artificia
 Two neural networks have been trained on the MNIST data set using the Google TensorFlow library.
 
 * A simple, fully connected 3 layer neural network, trained to a test accuracy of 91.8%.
-* And a convolutional neural network, with 2 convolutional layers and a fully connected layer, trained to a test accuracy of 99.2%.
+* A convolutional neural network, with 2 convolutional layers and a fully connected layer, trained to a test accuracy of 99.2%.
 
 This web application demonstrates the ability of both networks to classify handwritten digits.
 
