@@ -13,7 +13,7 @@ This web application demonstrates the ability of both networks to classify handw
 
 This application is available at [mnist-demo.herokuapp.com](http://mnist-demo.herokuapp.com)
 
-Once you draw an image it is scaled to the appropriate 28x28 pixel resolution evaluated with both networks:
+Once you draw an image it is scaled to the appropriate 28x28 pixel resolution and evaluated with both networks:
 
 
 
