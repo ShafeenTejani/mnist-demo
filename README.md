@@ -91,8 +91,14 @@ python networks/convolutional.py
 The trained networks will be saved to the `/tmp` directory
 
 
-## Deployment
+## Deployment to Heroku
 
+```bash
+$ heroku apps:create <NAME>
+$ heroku buildpacks:add heroku/nodejs
+$ heroku buildpacks:add heroku/python
+$ git push heroku master
+```
 
 
 
