@@ -37,22 +37,30 @@ The training data used are the 60,000 training images from the MNIST database of
 ### Install Dependencies
 
 Install server dependencies:
+
+(Linux)
 ```bash
 pip install -r requirements.txt
 ``` 
 
-(Linux)
-
-* `pip install -r requirements-mac.txt` (Mac)
+(Mac)
+```bash
+pip install -r requirements-mac.txt
+``` 
 
 Install web dependencies:
-* `npm install`
+
+```bash
+npm install
+```
 
 ### Run Application
 
 To build and run the app locally run:
 
-* `npm run build && npm run gunicorn`
+```bash
+npm run build && npm run gunicorn
+```
 
 The app will be running at `localhost:8000`
 
@@ -60,8 +68,10 @@ The app will be running at `localhost:8000`
 
 To run the app with the front-end development server run:
 
-* `npm run gunicorn`
-* `npm run dev`
+```bash
+npm run gunicorn
+npm run dev
+```
 
 The development server will be running at `localhost:8080` and proxying requests to `localhost:8000`
 
