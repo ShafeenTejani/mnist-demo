@@ -15,7 +15,7 @@ This application is available at [mnist-demo.herokuapp.com](http://mnist-demo.he
 
 Once you draw an image it is scaled to the appropriate 28x28 pixel resolution and evaluated with both networks:
 
-
+![Demo](demo.gif)
 
 ## Code
 
